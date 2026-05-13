@@ -13,9 +13,10 @@ Savant_Graph_Scene_Generator
 
 ## Features
 
-- Automatic Baseball Savant data parsing
-- Procedural bar graph generation
-- Custom geometry builder functions
-- Material assignment based on stats
-- Automatic object positioning
-- Scene generation directly in Maya viewport
+- [ ] Automatic Baseball Savant data parsing
+- [ ] Procedural bar graph generation
+- [ ] Support for hitting statistics
+- [ ] Support for pitching statistics
+- [ ] Custom geometry builder functions
+- [ ] Material assignment based on stat values
+- [ ] Automatic object positioning
