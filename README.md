@@ -9,4 +9,13 @@ Sorts user input data from baseball savant and turns it into a 3D animated bar g
 Savant_Graph_Scene_Generator
 	Geometry_utils.py	# Geometry creation functions
 	Material_utils.py	# Material creation functions based on stats
-	main.py		#
+	main.py	# Main execution file
+
+## Features
+
+- Automatic Baseball Savant data parsing
+- Procedural bar graph generation
+- Custom geometry builder functions
+- Material assignment based on stats
+- Automatic object positioning
+- Scene generation directly in Maya viewport
