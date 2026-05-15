@@ -69,7 +69,7 @@ def create_bar_graph(values=None, labels=None, spacing=1.5, bar_width=0.8, bar_d
  
 def create_text_label(text="Label", position=(0.0, 0.0, 0.0), scale=0.3, name="text_label"):
     """
-    Create a 3D polygon text object using Maya's Type tool (Create > Type).
+    Create a text label using NURBS curves (textCurves).
  
     Parameters
     ----------
@@ -81,16 +81,12 @@ def create_text_label(text="Label", position=(0.0, 0.0, 0.0), scale=0.3, name="t
     Returns
     -------
     str
-        Maya node name of the created polygon type transform.
+        Maya node name of the created group transform.
     """
-    cmds.CreatePolygonType()
-    obj = cmds.ls(selection=True)[0]
-    type_node = cmds.listConnections("{}.message".format(obj))[0]
-    cmds.setAttr("{}.textInput".format(type_node), text, type="string")
-    obj = cmds.rename(obj, name)
-    cmds.scale(scale, scale, scale, obj)
-    cmds.move(position[0], position[1], position[2], obj, absolute=True)
-    return obj
+    grp = cmds.textCurves(font="Arial", text=text, ch=False, name=name)[0]
+    cmds.scale(scale, scale, scale, grp)
+    cmds.move(position[0], position[1], position[2], grp, absolute=True)
+    return grp
  
  
 def create_ground_plane(width=20.0, depth=10.0, name="ground_plane"):
@@ -118,3 +114,4 @@ def create_ground_plane(width=20.0, depth=10.0, name="ground_plane"):
         name=name
     )[0]
     return plane
+ 
