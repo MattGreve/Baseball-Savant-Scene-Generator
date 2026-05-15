@@ -113,5 +113,5 @@ def create_ground_plane(width=20.0, depth=10.0, name="ground_plane"):
         subdivisionsY=1,
         name=name
     )[0]
+    cmds.move(width / 2.0, 0.0, 0.0, plane, absolute=True)
     return plane
- 
